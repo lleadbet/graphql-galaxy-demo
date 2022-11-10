@@ -1,0 +1,11 @@
+query ($userId: ID!) {
+  user(id: $userId) {
+    id
+    ... @defer {
+      definitelyNotAnError {
+        message
+        code
+      }
+    }
+  }
+}

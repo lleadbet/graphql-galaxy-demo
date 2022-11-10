@@ -18,7 +18,19 @@ type User {
   friends(first: Int = 10, after: Int = 0): [User!]
   phoneNumber: String
   title: String
-  avatarUrl: String
+  avatarUrl: String!
+  company: Company
+  definitelyNotAnError:Error
+}
+
+type Error {
+  code: String!
+  message: String!
+}
+type Company {
+  id: ID!
+  name: String!
+  owner: User
 }
 
 type Mutation {

@@ -9,12 +9,11 @@ export const generateUsers = (numberOfUsers: number) => {
     let ln = faker.name.lastName()
     users.push({
       id: randomUUID(), 
-      name: faker.name.fullName({firstName: fn, lastName: ln}),
       email: faker.internet.exampleEmail(fn, ln),
+      name: faker.name.fullName({firstName: fn, lastName: ln}),
       username: faker.internet.userName(fn, ln),
       phoneNumber: faker.phone.number(),
       title: faker.name.jobTitle(),
-      avatarUrl: faker.internet.avatar()
     })
   }
   return users

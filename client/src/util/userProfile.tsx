@@ -8,7 +8,8 @@ type UserProfileProps ={
 }
 export const UserProfile = ({query}:UserProfileProps) => {
     const {data, loading, error} = useQuery(query,{
-      fetchPolicy: 'no-cache'
+      fetchPolicy: 'no-cache',
+      errorPolicy: 'none'
     })
     console.log(data, loading, error)
 
@@ -16,7 +17,7 @@ export const UserProfile = ({query}:UserProfileProps) => {
         return <Loading />
     }else if(error){
       return (
-        <div>error.message</div> 
+        <div>{error.message}</div> 
       )
     }
     return(

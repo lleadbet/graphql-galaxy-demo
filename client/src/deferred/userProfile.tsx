@@ -6,7 +6,9 @@ query UserRegular{
   users {
     id
     name
-    avatarUrl
+    ... @defer{
+      avatarUrl
+    }
     title
     username
     ... @defer {
